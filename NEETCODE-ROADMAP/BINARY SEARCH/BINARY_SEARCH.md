@@ -1,16 +1,37 @@
 # Binary Search Algorithm
 
-Binary Search is an algorithm used to find the position target value in sorted array.
+Binary Search is an efficient algorithm used to find the position of a target value in a **sorted** array.
 
-## Required
-- Array must be sorted
-- Access to any element of data sctucture should takes contant time
+## Requirements
+- The array **must** be sorted.
+- Access to any element in the data structure should take **constant time**.
 
-## Step by step
-- go to middle position of array
-- compare the middle value of array with targeted value
-- if middle postion bigger than target, than set **left value to middle + 1**
-- if middle postion smaller than target, than set **right value to middle - 1**
+## Step-by-Step Explanation
+1. Find the **middle** position of the array.
+2. Compare the middle value with the **target value**.
+3. If the middle value is **greater** than the target, update **right = middle - 1**.
+4. If the middle value is **smaller** than the target, update **left = middle + 1**.
+5. Repeat the process until the target is found or the search space is exhausted.
+
+## Binary Search Code (Python)
+```python
+def binary_search(arr, target):
+    if not arr:
+        return -1  # Return -1 if the array is empty
+    
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid  # Return the index of the target
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+            
+    return -1  # Return -1 if the target is not found
+```
 
 ## Some articles to read
 - **Wikipedia - Binary Search** [Wikipedia - Binary Search](https://en.wikipedia.org/wiki/Binary_search)
