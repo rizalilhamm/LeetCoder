@@ -19,7 +19,7 @@ Binary Search is an efficient algorithm used to find the position of a target va
 3. Finding peak element in an array
 4. Optimizing search space in problem lik **Minimum in rotated sorted array**
 
-## Binary Search Code (Python)
+## Binary Search Code (Python) - Best for large data
 ```python
 def binary_search(arr, target):
     if not arr:
@@ -40,7 +40,7 @@ def binary_search(arr, target):
 ```
 The iterative version of Binary Search is often be preferred, cause it avoids recursion overhead.
 
-## Binary Search with Upper Bound (Next Greater Element) Best for large data
+## Binary Search with Upper Bound (Next Greater Element)
 ```python
 def upper_bound(arr, target):
     left, right = 0, len(arr)
